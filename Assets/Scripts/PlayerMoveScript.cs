@@ -112,7 +112,7 @@ public class PlayerMoveScript : MonoBehaviour {
         
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
         if(collision.collider.transform.tag == "Ground")
         {
