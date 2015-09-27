@@ -7,6 +7,7 @@ public class CameraScript : MonoBehaviour {
     public Vector3 offset;
     public float cameraHeight;
     public bool lookAtPlayer;
+    public bool movable;
 
     private bool move;
     private float targetHeight;
@@ -27,7 +28,7 @@ public class CameraScript : MonoBehaviour {
 
     void LateUpdate()
     {
-        if (Mathf.Abs((target.transform.position - transform.position).magnitude) > offset.magnitude)
+        if (movable)
         {
             Vector3 desiredPosition = new Vector3(target.transform.position.x + offset.x, transform.position.y, target.transform.position.z + offset.z);
             transform.position = desiredPosition;

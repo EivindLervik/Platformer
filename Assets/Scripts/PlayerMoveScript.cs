@@ -45,7 +45,6 @@ public class PlayerMoveScript : MonoBehaviour {
         {
             Vector3 forward = kamera.GetForward();
             transform.forward = (Vector3.Project(forward, Vector3.right) + Vector3.Project(forward, Vector3.forward));
-            print(Vector3.Project(forward, Vector3.right) + Vector3.Project(forward, Vector3.forward));
         }
 	}
 
@@ -64,7 +63,7 @@ public class PlayerMoveScript : MonoBehaviour {
     {
         Vector3 force = Vector3.zero;
 
-        if (Input.GetButton("Jump") && canJump){
+        if (Input.GetButtonDown("Jump") && canJump){
             force.y += jumpForce;
             grounded = false;
         }
