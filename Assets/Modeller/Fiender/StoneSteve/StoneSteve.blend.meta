@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: 9abd2eb39398cda4e8601bc15b5acc1a
+timeCreated: 1443371373
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: DLeppebein
+    100004: LFotBein
+    100006: LL_rbein
+    100008: LLeppebein
+    100010: MainBone
+    100012: pasted__transform1
+    100014: pasted__transform1_001
+    100016: pasted__transform2
+    100018: pasted__transform2_001
+    100020: pCube2
+    100022: RFotBein
+    100024: RL_rbein
+    100026: RLeppebein
+    100028: //RootNode
+    100030: transform1
+    100032: transform1_001
+    100034: transform2
+    100036: transform2_001
+    100038: transform3
+    100040: transform3_001
+    100042: transform4
+    100044: transform4_001
+    100046: ULeppebein
+    100048: UtTilMunnBeinet
+    400000: Armature
+    400002: DLeppebein
+    400004: LFotBein
+    400006: LL_rbein
+    400008: LLeppebein
+    400010: MainBone
+    400012: pasted__transform1
+    400014: pasted__transform1_001
+    400016: pasted__transform2
+    400018: pasted__transform2_001
+    400020: pCube2
+    400022: RFotBein
+    400024: RL_rbein
+    400026: RLeppebein
+    400028: //RootNode
+    400030: transform1
+    400032: transform1_001
+    400034: transform2
+    400036: transform2_001
+    400038: transform3
+    400040: transform3_001
+    400042: transform4
+    400044: transform4_001
+    400046: ULeppebein
+    400048: UtTilMunnBeinet
+    4300000: pCube2
+    7400000: Default Take
+    7400002: ArmatureAction
+    9500000: //RootNode
+    13700000: pCube2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
