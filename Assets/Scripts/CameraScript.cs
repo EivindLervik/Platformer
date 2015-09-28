@@ -32,8 +32,6 @@ public class CameraScript : MonoBehaviour {
         {
             Vector3 desiredPosition = new Vector3(target.transform.position.x + offset.x, transform.position.y, target.transform.position.z + offset.z);
             transform.position = desiredPosition;
-            print(Mathf.Abs((target.transform.position - transform.position).magnitude));
-            print(maxDistance);
         }
         if (lookAtPlayer)
         {

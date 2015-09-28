@@ -20,6 +20,11 @@ public class PlayerMoveScript : MonoBehaviour {
     public bool cinematic;
     public bool threeDee;
 
+	public float climbSpeed;
+
+	private bool canClimb;
+	private string climbWay;
+
     private Rigidbody body;
     private CapsuleCollider coll;
     private bool grounded;
@@ -33,6 +38,7 @@ public class PlayerMoveScript : MonoBehaviour {
         coll = GetComponent<CapsuleCollider>();
         grounded = true;
         canJump = true;
+		canClimb = false;
 	}
 	
 	// Update is called once per frame
@@ -51,7 +57,12 @@ public class PlayerMoveScript : MonoBehaviour {
     void FixedUpdate(){
         if (canMove)
         {
-            DoMovement();
+			if(canClimb)
+			{
+				DoClimb();
+			}else{
+            	DoMovement();
+			}
         }
         if (cinematic)
         {
@@ -59,13 +70,63 @@ public class PlayerMoveScript : MonoBehaviour {
         }
     }
 
+	private void DoClimb(){
+		if (climbWay.Equals ("Right")) {
+			if (Input.GetAxis("Horizontal") > 0)
+			{
+				transform.Translate(transform.up*climbSpeed/100);
+			}
+			else if (Input.GetAxis("Horizontal") < 0)
+			{
+				transform.Translate(-transform.up*climbSpeed/100);
+			}
+		}
+		else if (climbWay.Equals ("Left")) {
+			if (Input.GetAxis("Horizontal") > 0)
+			{
+				transform.Translate(-transform.up*climbSpeed/100);
+			}
+			else if (Input.GetAxis("Horizontal") < 0)
+			{
+				transform.Translate(transform.up*climbSpeed/100);
+			}
+		}
+		else if (climbWay.Equals ("Forward")) {
+			if (Input.GetAxis("Vertical") > 0)
+			{
+				transform.Translate(transform.up*climbSpeed/100);
+			}
+			else if (Input.GetAxis("Vertical") < 0)
+			{
+				transform.Translate(-transform.up*climbSpeed/100);
+			}
+		}
+
+		if (Input.GetButtonDown("Jump") && canJump){
+			Vector3 jumpWay = transform.up;
+			if(climbWay.Equals("Right"))
+			{
+				jumpWay -= transform.right;
+			}
+			else if(climbWay.Equals("Left"))
+			{
+				jumpWay += transform.right;
+			}
+			else{
+				jumpWay -= transform.forward;
+			}
+			body.AddForce(jumpWay*jumpForce);
+			canJump = false;
+		}
+	}
+
     private void DoMovement()
     {
         Vector3 force = Vector3.zero;
 
         if (Input.GetButtonDown("Jump") && canJump){
             force.y += jumpForce;
-            grounded = false;
+            canJump = false;
         }
         
         if(body.velocity.x < maxMoveSpeed && body.velocity.z < maxMoveSpeed)
@@ -116,18 +177,34 @@ public class PlayerMoveScript : MonoBehaviour {
     {
         if(collision.collider.transform.tag == "Ground")
         {
-            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y-coll.height/2, transform.position.z), -Vector3.Cross(overallForward, overallIn));
-            RaycastHit[] hits = Physics.SphereCastAll(ray, coll.radius, 0.05f);
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y-(coll.height*2/3), transform.position.z), -Vector3.Cross(overallForward, overallIn));
+			RaycastHit[] hits = Physics.SphereCastAll(ray, coll.radius, (coll.height/3)+0.1f);
             foreach(RaycastHit hit in hits)
             {
                 if (hit.transform.tag.Equals("Ground"))
                 {
-                    grounded = true;
+                    //grounded = true;
                     kamera.UpdateHeight(transform.position.y);
                 }
             }
         }
     }
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if(collision.collider.transform.tag == "Ground")
+		{
+			grounded = true;
+		}
+	}
+
+	void OnCollisionExit(Collision collision)
+	{
+		if(collision.collider.transform.tag == "Ground")
+		{
+			grounded = false;
+		}
+	}
 
     void OnTriggerEnter(Collider collider)
     {
@@ -136,7 +213,22 @@ public class PlayerMoveScript : MonoBehaviour {
             turnerObject = collider.transform.gameObject.GetComponent<PlayerTurnerScript>();
             turnerObject.Traff(transform.forward);
             useTurner = true;
-        }
+		}
+		if (collider.transform.tag == "Climbeable/ClimbeableRight")
+		{
+			climbWay = "Right";
+			canClimb = true;
+		}
+		if (collider.transform.tag == "Climbeable/ClimbeableLeft")
+		{
+			climbWay = "Left";
+			canClimb = true;
+		}
+		if (collider.transform.tag == "Climbeable/ClimbeableForward")
+		{
+			climbWay = "Forward";
+			canClimb = true;
+		}
     }
 
     void OnTriggerExit(Collider collider)
@@ -144,6 +236,12 @@ public class PlayerMoveScript : MonoBehaviour {
         if (collider.transform.tag == "Turner")
         {
             useTurner = false;
-        }
+		}
+		if (collider.transform.tag == "Climbeable/ClimbeableRight" 
+		         || collider.transform.tag == "Climbeable/ClimbeableRight" 
+		         || collider.transform.tag == "Climbeable/ClimbeableRight")
+		{
+			canClimb = false;
+		}
     }
 }

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Turner
+  - Climbeable/ClimbeableLeft
+  - Climbeable/ClimbeableRight
+  - Climbeable/ClimbeableForward
   layers:
   - Default
   - TransparentFX

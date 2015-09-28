@@ -95,7 +95,7 @@ GameObject:
   - 4: {fileID: 93638517}
   - 108: {fileID: 93638516}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &332697627
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,8 +180,11 @@ Transform:
   - {fileID: 345878323}
   - {fileID: 1874922082}
   - {fileID: 712017892}
+  - {fileID: 1441096418}
+  - {fileID: 720432348}
+  - {fileID: 952088059}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &345878322
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +197,7 @@ GameObject:
   - 64: {fileID: 345878325}
   - 23: {fileID: 345878324}
   m_Layer: 0
-  m_Name: Plane (4)
+  m_Name: Slopes
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +245,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 345878322}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a811a4f1f291b34fbfd931c13a529e3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -327,7 +330,7 @@ GameObject:
   - 65: {fileID: 375184535}
   - 23: {fileID: 375184534}
   m_Layer: 0
-  m_Name: Cube2 (1)
+  m_Name: Platformer
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -434,6 +437,7 @@ MonoBehaviour:
   canMove: 1
   cinematic: 0
   threeDee: 1
+  climbSpeed: 10
 --- !u!23 &510808118
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -492,7 +496,7 @@ Transform:
   m_Children:
   - {fileID: 363777958}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
 --- !u!136 &510808122
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -518,7 +522,7 @@ GameObject:
   - 64: {fileID: 522508076}
   - 23: {fileID: 522508075}
   m_Layer: 0
-  m_Name: Plane (2)
+  m_Name: Slopes
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,7 +570,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 522508073}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a811a4f1f291b34fbfd931c13a529e3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -591,7 +595,7 @@ GameObject:
   - 65: {fileID: 578959272}
   - 23: {fileID: 578959271}
   m_Layer: 0
-  m_Name: Cube2
+  m_Name: Platformer
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,7 +668,7 @@ GameObject:
   - 65: {fileID: 587887593}
   - 23: {fileID: 587887592}
   m_Layer: 0
-  m_Name: Cube1 (1)
+  m_Name: Platformer
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -737,7 +741,7 @@ GameObject:
   - 64: {fileID: 712017894}
   - 23: {fileID: 712017893}
   m_Layer: 0
-  m_Name: Plane (6)
+  m_Name: Slopes
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -785,7 +789,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 712017891}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a811a4f1f291b34fbfd931c13a529e3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -798,6 +802,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 712017891}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &720432348 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: aa2367ad0bd96f3469fb5d2fdb34faa7, type: 3}
+  m_PrefabInternal: {fileID: 1251324444}
 --- !u!1 &952088055
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +818,7 @@ GameObject:
   - 64: {fileID: 952088057}
   - 23: {fileID: 952088056}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Bakke
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -867,20 +875,20 @@ Transform:
   m_GameObject: {fileID: 952088055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 332697628}
+  m_RootOrder: 12
 --- !u!1001 &1251324444
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 332697628}
     m_Modifications:
     - target: {fileID: 400000, guid: aa2367ad0bd96f3469fb5d2fdb34faa7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.1499996
+      value: 1.91499996
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aa2367ad0bd96f3469fb5d2fdb34faa7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -888,7 +896,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aa2367ad0bd96f3469fb5d2fdb34faa7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.3400002
+      value: 1.03400004
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aa2367ad0bd96f3469fb5d2fdb34faa7, type: 3}
       propertyPath: m_LocalRotation.x
@@ -908,7 +916,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aa2367ad0bd96f3469fb5d2fdb34faa7, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6400000, guid: aa2367ad0bd96f3469fb5d2fdb34faa7, type: 3}
       propertyPath: m_Convex
@@ -931,9 +939,131 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aa2757416339b544ab33efacd400709c, type: 2}
+    - target: {fileID: 400000, guid: aa2367ad0bd96f3469fb5d2fdb34faa7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: aa2367ad0bd96f3469fb5d2fdb34faa7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa2367ad0bd96f3469fb5d2fdb34faa7, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1441096417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1441096418}
+  - 33: {fileID: 1441096421}
+  - 65: {fileID: 1441096420}
+  - 23: {fileID: 1441096419}
+  m_Layer: 0
+  m_Name: Wall
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1441096418
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1441096417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .800000012, y: 1.5, z: .100000001}
+  m_LocalScale: {x: .200000003, y: 3, z: .100000001}
+  m_Children:
+  - {fileID: 1540164121}
+  m_Father: {fileID: 332697628}
+  m_RootOrder: 10
+--- !u!23 &1441096419
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1441096417}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: aa2757416339b544ab33efacd400709c, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!65 &1441096420
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1441096417}
+  m_Material: {fileID: 13400000, guid: 8a811a4f1f291b34fbfd931c13a529e3, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1441096421
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1441096417}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1540164120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1540164121}
+  - 65: {fileID: 1540164122}
+  m_Layer: 0
+  m_Name: ClimbingSensor
+  m_TagString: Climbeable/ClimbeableRight
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1540164121
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1540164120}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0250000004, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1441096418}
+  m_RootOrder: 0
+--- !u!65 &1540164122
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1540164120}
+  m_Material: {fileID: 13400000, guid: 8a811a4f1f291b34fbfd931c13a529e3, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .0700000003, y: 1.04999995, z: .159999996}
+  m_Center: {x: -.5, y: 0, z: 0}
 --- !u!1 &1558536177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +1150,7 @@ Transform:
   m_LocalScale: {x: 1.00355625, y: 1.30332375, z: 1.30531788}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &1558536183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1049,7 +1179,7 @@ GameObject:
   - 64: {fileID: 1738236280}
   - 23: {fileID: 1738236279}
   m_Layer: 0
-  m_Name: Plane (3)
+  m_Name: Slopes
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1097,7 +1227,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1738236277}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a811a4f1f291b34fbfd931c13a529e3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1122,7 +1252,7 @@ GameObject:
   - 64: {fileID: 1874922084}
   - 23: {fileID: 1874922083}
   m_Layer: 0
-  m_Name: Plane (5)
+  m_Name: Slopes
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1170,7 +1300,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1874922081}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a811a4f1f291b34fbfd931c13a529e3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1195,7 +1325,7 @@ GameObject:
   - 64: {fileID: 1948324357}
   - 23: {fileID: 1948324356}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: Slopes
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1243,7 +1373,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1948324354}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a811a4f1f291b34fbfd931c13a529e3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1268,7 +1398,7 @@ GameObject:
   - 65: {fileID: 2096467980}
   - 23: {fileID: 2096467979}
   m_Layer: 0
-  m_Name: Cube1
+  m_Name: Platformer
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
