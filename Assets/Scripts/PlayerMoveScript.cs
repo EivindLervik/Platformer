@@ -32,6 +32,10 @@ public class PlayerMoveScript : MonoBehaviour {
     private bool useTurner;
     private PlayerTurnerScript turnerObject;
 
+	private float medianScale;
+	private float characterRadius;
+	private float characterUsableRadius;
+
     // Use this for initialization
     void Start () {
         body = GetComponent<Rigidbody>();
@@ -39,19 +43,22 @@ public class PlayerMoveScript : MonoBehaviour {
         grounded = true;
         canJump = true;
 		canClimb = false;
+		medianScale = (transform.localScale.x + transform.localScale.z)/2.0f;
+		characterRadius = coll.radius * medianScale;
+		characterUsableRadius = characterRadius - 0.05f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(grounded != canJump)
-        {
-            canJump = grounded;
-        }
         if (useCamera)
         {
             Vector3 forward = kamera.GetForward();
             transform.forward = (Vector3.Project(forward, Vector3.right) + Vector3.Project(forward, Vector3.forward));
         }
+		if (!canClimb) {
+			//print (canJump);
+			DoJump (transform.up);
+		}
 	}
 
     void FixedUpdate(){
@@ -102,7 +109,7 @@ public class PlayerMoveScript : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetButtonDown("Jump") && canJump){
+		if (Input.GetButton("Jump") && canJump){
 			Vector3 jumpWay = transform.up;
 			if(climbWay.Equals("Right"))
 			{
@@ -122,13 +129,7 @@ public class PlayerMoveScript : MonoBehaviour {
 
     private void DoMovement()
     {
-        Vector3 force = Vector3.zero;
-
-        if (Input.GetButtonDown("Jump") && canJump){
-            force.y += jumpForce;
-            canJump = false;
-            grounded = false;
-        }
+		Vector3 force = Vector3.zero;
         
         if(body.velocity.x < maxMoveSpeed && body.velocity.z < maxMoveSpeed)
         {
@@ -169,6 +170,17 @@ public class PlayerMoveScript : MonoBehaviour {
         body.velocity = newVel;
     }
 
+	private void DoJump(Vector3 direction){
+		if (Input.GetButtonDown("Jump") && canJump){
+			canJump = false;
+			grounded = false;
+			body.AddForce(direction*jumpForce);
+		}
+	}
+	private void DoBounce(Vector3 direction){
+		body.AddForce(direction*jumpForce);
+	}
+
     private void DoCinematicMovement()
     {
         
@@ -178,8 +190,8 @@ public class PlayerMoveScript : MonoBehaviour {
     {
         if(collision.collider.transform.tag == "Ground")
         {
-            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y-(coll.height*2/3), transform.position.z), -Vector3.Cross(overallForward, overallIn));
-			RaycastHit[] hits = Physics.SphereCastAll(ray, coll.radius - 0.05f, (coll.height/3)+0.1f);
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z), -transform.up);
+			RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, (transform.localScale.y / 2)+ 0.05f);
             foreach(RaycastHit hit in hits)
             {
                 if (hit.transform.tag.Equals("Ground"))
@@ -194,14 +206,16 @@ public class PlayerMoveScript : MonoBehaviour {
 	{
 		if(collision.collider.transform.tag == "Ground")
 		{
-            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y - (coll.height*2/3), transform.position.z), -Vector3.Cross(overallForward, overallIn));
-            RaycastHit[] hits = Physics.SphereCastAll(ray, coll.radius - 0.05f, (coll.height / 6) + 0.1f);
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z), -transform.up);
+			RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, (transform.localScale.y / 2.0f));
 
             foreach (RaycastHit hit in hits)
             {
                 if (hit.transform.tag.Equals("Ground"))
                 {
                     grounded = true;
+					canJump = true;
+					canClimb = false;
                 }
             }
         }
@@ -212,21 +226,17 @@ public class PlayerMoveScript : MonoBehaviour {
 		if(collision.collider.transform.tag == "Ground")
 		{
 			grounded = false;
+			canJump = false;
             
-            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y - (coll.height*2/3), transform.position.z), -Vector3.Cross(overallForward, overallIn));
-            RaycastHit[] hits = Physics.SphereCastAll(ray, coll.radius-0.05f, 0.01f);
-
-            print(transform.position.y);
-            print(ray.origin.y);
-            print((coll.height / 6));
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z), -transform.up);
+			RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, (transform.localScale.y / 2.0f)-characterUsableRadius);
 
             foreach (RaycastHit hit in hits)
             {
-                print(hit.point.y);
                 if (hit.transform.tag.Equals("Ground"))
                 {
-                    print(hit.point.y);
                     grounded = true;
+					canJump = true;
                 }
             }
             
@@ -245,16 +255,19 @@ public class PlayerMoveScript : MonoBehaviour {
 		{
 			climbWay = "Right";
 			canClimb = true;
+			body.velocity = transform.right*0.1f;
 		}
 		if (collider.transform.tag == "Climbeable/ClimbeableLeft")
 		{
 			climbWay = "Left";
 			canClimb = true;
+			body.velocity = -transform.right*0.1f;
 		}
 		if (collider.transform.tag == "Climbeable/ClimbeableForward")
 		{
 			climbWay = "Forward";
 			canClimb = true;
+			body.velocity = transform.forward*0.1f;
 		}
     }
 
@@ -268,7 +281,28 @@ public class PlayerMoveScript : MonoBehaviour {
 		         || collider.transform.tag == "Climbeable/ClimbeableRight" 
 		         || collider.transform.tag == "Climbeable/ClimbeableRight")
 		{
-			canClimb = false;
+			if(canClimb){
+				if(canJump){
+					Vector3 jumpWay = transform.up*0.5f;
+					if(climbWay.Equals("Right"))
+					{
+						jumpWay += transform.right*0.3f;
+					}
+					else if(climbWay.Equals("Left"))
+					{
+						jumpWay -= transform.right*0.3f;
+					}
+					else{
+						jumpWay += transform.forward*0.3f;
+					}
+
+					print ("Did jump");
+					DoBounce(jumpWay);
+					canJump = false;
+				}
+
+				canClimb = false;
+			}
 		}
     }
 }
