@@ -127,6 +127,7 @@ public class PlayerMoveScript : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && canJump){
             force.y += jumpForce;
             canJump = false;
+            grounded = false;
         }
         
         if(body.velocity.x < maxMoveSpeed && body.velocity.z < maxMoveSpeed)
@@ -178,12 +179,11 @@ public class PlayerMoveScript : MonoBehaviour {
         if(collision.collider.transform.tag == "Ground")
         {
             Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y-(coll.height*2/3), transform.position.z), -Vector3.Cross(overallForward, overallIn));
-			RaycastHit[] hits = Physics.SphereCastAll(ray, coll.radius, (coll.height/3)+0.1f);
+			RaycastHit[] hits = Physics.SphereCastAll(ray, coll.radius - 0.05f, (coll.height/3)+0.1f);
             foreach(RaycastHit hit in hits)
             {
                 if (hit.transform.tag.Equals("Ground"))
                 {
-                    //grounded = true;
                     kamera.UpdateHeight(transform.position.y);
                 }
             }
@@ -194,8 +194,17 @@ public class PlayerMoveScript : MonoBehaviour {
 	{
 		if(collision.collider.transform.tag == "Ground")
 		{
-			grounded = true;
-		}
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y - (coll.height*2/3), transform.position.z), -Vector3.Cross(overallForward, overallIn));
+            RaycastHit[] hits = Physics.SphereCastAll(ray, coll.radius - 0.05f, (coll.height / 6) + 0.1f);
+
+            foreach (RaycastHit hit in hits)
+            {
+                if (hit.transform.tag.Equals("Ground"))
+                {
+                    grounded = true;
+                }
+            }
+        }
 	}
 
 	void OnCollisionExit(Collision collision)
@@ -203,7 +212,25 @@ public class PlayerMoveScript : MonoBehaviour {
 		if(collision.collider.transform.tag == "Ground")
 		{
 			grounded = false;
-		}
+            
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y - (coll.height*2/3), transform.position.z), -Vector3.Cross(overallForward, overallIn));
+            RaycastHit[] hits = Physics.SphereCastAll(ray, coll.radius-0.05f, 0.01f);
+
+            print(transform.position.y);
+            print(ray.origin.y);
+            print((coll.height / 6));
+
+            foreach (RaycastHit hit in hits)
+            {
+                print(hit.point.y);
+                if (hit.transform.tag.Equals("Ground"))
+                {
+                    print(hit.point.y);
+                    grounded = true;
+                }
+            }
+            
+        }
 	}
 
     void OnTriggerEnter(Collider collider)
