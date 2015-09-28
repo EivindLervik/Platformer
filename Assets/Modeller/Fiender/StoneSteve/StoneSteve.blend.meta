@@ -56,8 +56,12 @@ ModelImporter:
     400046: ULeppebein
     400048: UtTilMunnBeinet
     4300000: pCube2
-    7400000: Default Take
+    7400000: Die
     7400002: ArmatureAction
+    7400004: Idle
+    7400006: Walk
+    7400008: Attack
+    7400010: Death
     9500000: //RootNode
     13700000: pCube2
   materials:
@@ -79,7 +83,387 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: ArmatureAction
+      takeName: ArmatureAction
+      firstFrame: -1
+      lastFrame: 224
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/MainBone
+        weight: 1
+      - path: Armature/MainBone/LL_rbein
+        weight: 1
+      - path: Armature/MainBone/LL_rbein/LFotBein
+        weight: 1
+      - path: Armature/MainBone/RL_rbein
+        weight: 1
+      - path: Armature/MainBone/RL_rbein/RFotBein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/DLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/LLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/RLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/ULeppebein
+        weight: 1
+      - path: pasted__transform1
+        weight: 1
+      - path: pasted__transform1_001
+        weight: 1
+      - path: pasted__transform2
+        weight: 1
+      - path: pasted__transform2_001
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: transform1
+        weight: 1
+      - path: transform1_001
+        weight: 1
+      - path: transform2
+        weight: 1
+      - path: transform2_001
+        weight: 1
+      - path: transform3
+        weight: 1
+      - path: transform3_001
+        weight: 1
+      - path: transform4
+        weight: 1
+      - path: transform4_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: ArmatureAction
+      firstFrame: 1
+      lastFrame: 38
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/MainBone
+        weight: 1
+      - path: Armature/MainBone/LL_rbein
+        weight: 1
+      - path: Armature/MainBone/LL_rbein/LFotBein
+        weight: 1
+      - path: Armature/MainBone/RL_rbein
+        weight: 1
+      - path: Armature/MainBone/RL_rbein/RFotBein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/DLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/LLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/RLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/ULeppebein
+        weight: 1
+      - path: pasted__transform1
+        weight: 1
+      - path: pasted__transform1_001
+        weight: 1
+      - path: pasted__transform2
+        weight: 1
+      - path: pasted__transform2_001
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: transform1
+        weight: 1
+      - path: transform1_001
+        weight: 1
+      - path: transform2
+        weight: 1
+      - path: transform2_001
+        weight: 1
+      - path: transform3
+        weight: 1
+      - path: transform3_001
+        weight: 1
+      - path: transform4
+        weight: 1
+      - path: transform4_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: ArmatureAction
+      firstFrame: 41
+      lastFrame: 118
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/MainBone
+        weight: 1
+      - path: Armature/MainBone/LL_rbein
+        weight: 1
+      - path: Armature/MainBone/LL_rbein/LFotBein
+        weight: 1
+      - path: Armature/MainBone/RL_rbein
+        weight: 1
+      - path: Armature/MainBone/RL_rbein/RFotBein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/DLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/LLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/RLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/ULeppebein
+        weight: 1
+      - path: pasted__transform1
+        weight: 1
+      - path: pasted__transform1_001
+        weight: 1
+      - path: pasted__transform2
+        weight: 1
+      - path: pasted__transform2_001
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: transform1
+        weight: 1
+      - path: transform1_001
+        weight: 1
+      - path: transform2
+        weight: 1
+      - path: transform2_001
+        weight: 1
+      - path: transform3
+        weight: 1
+      - path: transform3_001
+        weight: 1
+      - path: transform4
+        weight: 1
+      - path: transform4_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack
+      takeName: ArmatureAction
+      firstFrame: 120
+      lastFrame: 199
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/MainBone
+        weight: 1
+      - path: Armature/MainBone/LL_rbein
+        weight: 1
+      - path: Armature/MainBone/LL_rbein/LFotBein
+        weight: 1
+      - path: Armature/MainBone/RL_rbein
+        weight: 1
+      - path: Armature/MainBone/RL_rbein/RFotBein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/DLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/LLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/RLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/ULeppebein
+        weight: 1
+      - path: pasted__transform1
+        weight: 1
+      - path: pasted__transform1_001
+        weight: 1
+      - path: pasted__transform2
+        weight: 1
+      - path: pasted__transform2_001
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: transform1
+        weight: 1
+      - path: transform1_001
+        weight: 1
+      - path: transform2
+        weight: 1
+      - path: transform2_001
+        weight: 1
+      - path: transform3
+        weight: 1
+      - path: transform3_001
+        weight: 1
+      - path: transform4
+        weight: 1
+      - path: transform4_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: ArmatureAction
+      firstFrame: 200
+      lastFrame: 224
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/MainBone
+        weight: 1
+      - path: Armature/MainBone/LL_rbein
+        weight: 1
+      - path: Armature/MainBone/LL_rbein/LFotBein
+        weight: 1
+      - path: Armature/MainBone/RL_rbein
+        weight: 1
+      - path: Armature/MainBone/RL_rbein/RFotBein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/DLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/LLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/RLeppebein
+        weight: 1
+      - path: Armature/MainBone/UtTilMunnBeinet/ULeppebein
+        weight: 1
+      - path: pasted__transform1
+        weight: 1
+      - path: pasted__transform1_001
+        weight: 1
+      - path: pasted__transform2
+        weight: 1
+      - path: pasted__transform2_001
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: transform1
+        weight: 1
+      - path: transform1_001
+        weight: 1
+      - path: transform2
+        weight: 1
+      - path: transform2_001
+        weight: 1
+      - path: transform3
+        weight: 1
+      - path: transform3_001
+        weight: 1
+      - path: transform4
+        weight: 1
+      - path: transform4_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
