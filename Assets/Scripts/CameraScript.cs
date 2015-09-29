@@ -10,19 +10,18 @@ public class CameraScript : MonoBehaviour {
     public bool movable;
 
     private bool move;
-    private float targetHeight;
-    private float maxDistance;
+    private Vector3 targetPosition;
 
 	// Use this for initialization
 	void Start () {
-        maxDistance = 7.0f;
+		move = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (move)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, offset.y, transform.position.z), 0.05f);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, 0.05f);
         }
 	}
 
@@ -39,11 +38,30 @@ public class CameraScript : MonoBehaviour {
         }
     }
 
-    public void UpdateHeight(float height)
+    public void UpdateHeight(float height, bool climbing)
     {
-        move = true;
-        offset.y = cameraHeight + height;
+		if (!climbing) {
+			offset.y = cameraHeight + height;
+			targetPosition = offset;
+		}
     }
+
+	public void SetClimbing(string direction)
+	{
+		Vector3 newPos = target.transform.position;
+		newPos.y += 1.0f;
+		newPos.z -= 2.0f;
+
+		if (direction.Equals ("Right")) 
+		{
+			newPos.x -= 1.0f;
+		} else if (direction.Equals ("Left")) 
+		{
+			newPos.x += 1.0f;
+		}
+
+		targetPosition = newPos;
+	}
 
     public Vector3 GetForward()
     {

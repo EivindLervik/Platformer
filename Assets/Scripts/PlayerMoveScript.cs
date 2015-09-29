@@ -20,6 +20,8 @@ public class PlayerMoveScript : MonoBehaviour {
     public bool cinematic;
     public bool threeDee;
 
+	public bool canBounce;
+
 	public float climbSpeed;
 
 	private bool canClimb;
@@ -29,6 +31,7 @@ public class PlayerMoveScript : MonoBehaviour {
     private CapsuleCollider coll;
     private bool grounded;
     private bool canJump;
+	private bool isWalljumping;
     private bool useTurner;
     private PlayerTurnerScript turnerObject;
 
@@ -124,7 +127,12 @@ public class PlayerMoveScript : MonoBehaviour {
 			}
 			body.AddForce(jumpWay*jumpForce);
 			canJump = false;
+			isWalljumping = true;
 		}
+
+		float deAccY = body.velocity.y / 1.05f;
+		Vector3 newVel = new Vector3(body.velocity.x, deAccY, body.velocity.z);
+		body.velocity = newVel;
 	}
 
     private void DoMovement()
@@ -196,7 +204,7 @@ public class PlayerMoveScript : MonoBehaviour {
             {
                 if (hit.transform.tag.Equals("Ground"))
                 {
-                    kamera.UpdateHeight(transform.position.y);
+                    kamera.UpdateHeight(transform.position.y, canClimb);
                 }
             }
         }
@@ -207,15 +215,17 @@ public class PlayerMoveScript : MonoBehaviour {
 		if(collision.collider.transform.tag == "Ground")
 		{
             Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z), -transform.up);
-			RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, (transform.localScale.y / 2.0f));
+			RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, (transform.localScale.y / 2.0f)-characterUsableRadius);
 
             foreach (RaycastHit hit in hits)
             {
                 if (hit.transform.tag.Equals("Ground"))
                 {
+					//print("Traff bakke");
                     grounded = true;
 					canJump = true;
 					canClimb = false;
+					isWalljumping = false;
                 }
             }
         }
@@ -255,19 +265,22 @@ public class PlayerMoveScript : MonoBehaviour {
 		{
 			climbWay = "Right";
 			canClimb = true;
-			body.velocity = transform.right*0.1f;
+			body.velocity = (transform.right + transform.up)*0.1f;
+			kamera.SetClimbing(climbWay);
 		}
 		if (collider.transform.tag == "Climbeable/ClimbeableLeft")
 		{
 			climbWay = "Left";
 			canClimb = true;
-			body.velocity = -transform.right*0.1f;
+			body.velocity = (-transform.right + transform.up)*0.1f;
+			kamera.SetClimbing(climbWay);
 		}
 		if (collider.transform.tag == "Climbeable/ClimbeableForward")
 		{
 			climbWay = "Forward";
 			canClimb = true;
-			body.velocity = transform.forward*0.1f;
+			body.velocity = (transform.forward + transform.up)*0.1f;
+			kamera.SetClimbing(climbWay);
 		}
     }
 
@@ -278,11 +291,11 @@ public class PlayerMoveScript : MonoBehaviour {
             useTurner = false;
 		}
 		if (collider.transform.tag == "Climbeable/ClimbeableRight" 
-		         || collider.transform.tag == "Climbeable/ClimbeableRight" 
-		         || collider.transform.tag == "Climbeable/ClimbeableRight")
+		         || collider.transform.tag == "Climbeable/ClimbeableLeft" 
+		         || collider.transform.tag == "Climbeable/ClimbeableForward")
 		{
 			if(canClimb){
-				if(canJump){
+				if(!isWalljumping){
 					Vector3 jumpWay = transform.up*0.5f;
 					if(climbWay.Equals("Right"))
 					{
@@ -296,7 +309,7 @@ public class PlayerMoveScript : MonoBehaviour {
 						jumpWay += transform.forward*0.3f;
 					}
 
-					print ("Did jump");
+					//print ("Did jump");
 					DoBounce(jumpWay);
 					canJump = false;
 				}
