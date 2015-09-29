@@ -59,7 +59,7 @@ public class PlayerMoveScript : MonoBehaviour {
             transform.forward = (Vector3.Project(forward, Vector3.right) + Vector3.Project(forward, Vector3.forward));
         }
 		if (!canClimb) {
-			//print (canJump);
+			print (canJump);
 			DoJump (transform.up);
 		}
 	}
@@ -196,14 +196,20 @@ public class PlayerMoveScript : MonoBehaviour {
 
     void OnCollisionStay(Collision collision)
     {
-        if(collision.collider.transform.tag == "Ground")
+        if (collision.collider.transform.tag == "Ground")
         {
             Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z), -transform.up);
-			RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, (transform.localScale.y / 2)+ 0.05f);
-            foreach(RaycastHit hit in hits)
+            RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, (transform.localScale.y / 2.0f) - characterUsableRadius + 0.05f);
+
+            foreach (RaycastHit hit in hits)
             {
                 if (hit.transform.tag.Equals("Ground"))
                 {
+                    //print(canJump);
+                    grounded = true;
+                    canJump = true;
+                    canClimb = false;
+                    isWalljumping = false;
                     kamera.UpdateHeight(transform.position.y, canClimb);
                 }
             }
@@ -212,23 +218,7 @@ public class PlayerMoveScript : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision)
 	{
-		if(collision.collider.transform.tag == "Ground")
-		{
-            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z), -transform.up);
-			RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, (transform.localScale.y / 2.0f)-characterUsableRadius);
-
-            foreach (RaycastHit hit in hits)
-            {
-                if (hit.transform.tag.Equals("Ground"))
-                {
-					//print("Traff bakke");
-                    grounded = true;
-					canJump = true;
-					canClimb = false;
-					isWalljumping = false;
-                }
-            }
-        }
+		// On collision
 	}
 
 	void OnCollisionExit(Collision collision)
@@ -282,6 +272,42 @@ public class PlayerMoveScript : MonoBehaviour {
 			body.velocity = (transform.forward + transform.up)*0.1f;
 			kamera.SetClimbing(climbWay);
 		}
+    }
+
+    void OnTriggerStay(Collider collider)
+    {
+        if (Input.GetButton("Jump") && !grounded)
+        {
+            DetectWallJump(collider);
+        }
+    }
+
+    private void DetectWallJump(Collider collider)
+    {
+        if (collider.transform.tag == "WallJumpWall/Right")
+        {
+            Vector3 jumpWay = transform.up * 0.4f;
+            jumpWay -= transform.right * 1.0f;
+
+            print ("Did jump");
+            DoBounce(jumpWay);
+        }
+        if (collider.transform.tag == "WallJumpWall/Left")
+        {
+            Vector3 jumpWay = transform.up * 0.4f;
+            jumpWay += transform.right * 1.0f;
+
+            print("Did jump");
+            DoBounce(jumpWay);
+        }
+        if (collider.transform.tag == "WallJumpWall/Forward")
+        {
+
+        }
+        if (collider.transform.tag == "WallJumpWall/Back")
+        {
+
+        }
     }
 
     void OnTriggerExit(Collider collider)

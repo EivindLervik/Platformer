@@ -9,6 +9,10 @@ TagManager:
   - Climbeable/ClimbeableLeft
   - Climbeable/ClimbeableRight
   - Climbeable/ClimbeableForward
+  - WallJumpWall/Right
+  - WallJumpWall/Left
+  - WallJumpWall/Forward
+  - WallJumpWall/Back
   layers:
   - Default
   - TransparentFX
