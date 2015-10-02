@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerMoveScript : MonoBehaviour {
 
     public CameraScript kamera;
-    public GameObject character;
+    public PlayerAnimationScript character;
     public Vector3 overallForward;
     public Vector3 overallIn;
     public float gravity;
@@ -35,7 +35,6 @@ public class PlayerMoveScript : MonoBehaviour {
     private bool useTurner;
     private PlayerTurnerScript turnerObject;
 
-	private float medianScale;
 	private float characterRadius;
 	private float characterUsableRadius;
 
@@ -46,17 +45,20 @@ public class PlayerMoveScript : MonoBehaviour {
         grounded = true;
         canJump = true;
 		canClimb = false;
-		medianScale = (transform.localScale.x + transform.localScale.z)/2.0f;
-		characterRadius = coll.radius * medianScale;
-		characterUsableRadius = characterRadius - 0.05f;
+		characterRadius = coll.radius;
+		characterUsableRadius = characterRadius - 0.1f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (useCamera)
         {
-            Vector3 forward = kamera.GetForward();
-            transform.forward = (Vector3.Project(forward, Vector3.right) + Vector3.Project(forward, Vector3.forward));
+            //Vector3 forward = kamera.GetForward();
+            //transform.forward = (Vector3.Project(forward, Vector3.right) + Vector3.Project(forward, Vector3.forward));
+            if((body.velocity.x + body.velocity.z) != 0 && body.velocity != Vector3.zero)
+            {
+                character.SetForward(new Vector3(body.velocity.x, 0, body.velocity.z));
+            }
         }
 		if (!canClimb) {
 			print (canJump);
@@ -198,8 +200,8 @@ public class PlayerMoveScript : MonoBehaviour {
     {
         if (collision.collider.transform.tag == "Ground")
         {
-            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z), -transform.up);
-            RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, (transform.localScale.y / 2.0f) - characterUsableRadius + 0.05f);
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + characterRadius, transform.position.z), -transform.up);
+            RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, 0.05f);
 
             foreach (RaycastHit hit in hits)
             {
@@ -227,14 +229,17 @@ public class PlayerMoveScript : MonoBehaviour {
 		{
 			grounded = false;
 			canJump = false;
-            
-            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z), -transform.up);
-			RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, (transform.localScale.y / 2.0f)-characterUsableRadius);
+
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + characterRadius, transform.position.z), -transform.up);
+			RaycastHit[] hits = Physics.SphereCastAll(ray, characterUsableRadius, 0.05f);
 
             foreach (RaycastHit hit in hits)
             {
                 if (hit.transform.tag.Equals("Ground"))
                 {
+                    //print(transform.position.y - characterRadius + characterUsableRadius + 0.01f);
+                    //print((ray.origin - hit.point).magnitude);
+                    //print(ray.origin.y);
                     grounded = true;
 					canJump = true;
                 }
@@ -284,29 +289,32 @@ public class PlayerMoveScript : MonoBehaviour {
 
     private void DetectWallJump(Collider collider)
     {
-        if (collider.transform.tag == "WallJumpWall/Right")
+        if (true)
         {
-            Vector3 jumpWay = transform.up * 0.4f;
-            jumpWay -= transform.right * 1.0f;
+            if (collider.transform.tag == "WallJumpWall/Right")
+            {
+                Vector3 jumpWay = transform.up * 0.8f;
+                jumpWay -= transform.right * 2.0f;
 
-            print ("Did jump");
-            DoBounce(jumpWay);
-        }
-        if (collider.transform.tag == "WallJumpWall/Left")
-        {
-            Vector3 jumpWay = transform.up * 0.4f;
-            jumpWay += transform.right * 1.0f;
+                print("Did jump");
+                DoBounce(jumpWay);
+            }
+            if (collider.transform.tag == "WallJumpWall/Left")
+            {
+                Vector3 jumpWay = transform.up * 0.8f;
+                jumpWay += transform.right * 2.0f;
 
-            print("Did jump");
-            DoBounce(jumpWay);
-        }
-        if (collider.transform.tag == "WallJumpWall/Forward")
-        {
+                print("Did jump");
+                DoBounce(jumpWay);
+            }
+            if (collider.transform.tag == "WallJumpWall/Forward")
+            {
 
-        }
-        if (collider.transform.tag == "WallJumpWall/Back")
-        {
+            }
+            if (collider.transform.tag == "WallJumpWall/Back")
+            {
 
+            }
         }
     }
 

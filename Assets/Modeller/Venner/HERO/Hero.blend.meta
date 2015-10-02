@@ -30,6 +30,82 @@ ModelImporter:
     100044: Hero_OBJECT
     100046: LeftEye
     100048: RightEye
+    100050: AnsiktMain
+    100052: Armature
+    100054: BrynMain
+    100056: Brystkasse
+    100058: HalsHovud
+    100060: HovudBein
+    100062: LBiceps
+    100064: LFot
+    100066: LHalsbein
+    100068: LHandBein
+    100070: LIBryn
+    100072: LLaar
+    100074: LLangefinger1
+    100076: LLangefinger2
+    100078: LLangefinger3
+    100080: LLegg
+    100082: LLegJoint
+    100084: LLillefinger1
+    100086: LLillefinger2
+    100088: LLillefinger3
+    100090: LLippe
+    100092: LOBryn
+    100094: LOere
+    100096: LOereFeste
+    100098: LPeikefinger1
+    100100: LPeikefinger2
+    100102: LPeikefinger3
+    100104: LRingefinger1
+    100106: LRingefinger2
+    100108: LRingefinger3
+    100110: LTaa
+    100112: LTilLangefinger
+    100114: LTilLillefinger
+    100116: LTilPeikefinger
+    100118: LTilRingefinger
+    100120: LTilTommel
+    100122: LTommel1
+    100124: LTommel2
+    100126: LWanker
+    100128: MainBone
+    100130: Nase
+    100132: OLippe
+    100134: RBiceps
+    100136: RFot
+    100138: RHandBein
+    100140: RHelsbein
+    100142: RIBryn
+    100144: RLaar
+    100146: RLangefinger1
+    100148: RLangefinger2
+    100150: RLangefinger3
+    100152: RLegg
+    100154: RLegJoint
+    100156: RLillefinger1
+    100158: RLillefinger2
+    100160: RLillefinger3
+    100162: RLippe
+    100164: ROBryn
+    100166: ROere
+    100168: ROereFeste
+    100170: RPeikefinger1
+    100172: RPeikefinger2
+    100174: RPeikefinger3
+    100176: RRingefinger1
+    100178: RRingefinger2
+    100180: RRingefinger3
+    100182: RTaa
+    100184: RTilLangefinger
+    100186: RTilLillefinger
+    100188: RTilPeikefinger
+    100190: RTilRingefinger
+    100192: RTilTommel
+    100194: RTommel1
+    100196: RTommel2
+    100198: RWanker
+    100200: ULippe
     400000: //RootNode
     400002: pCube1
     400004: pCube10
@@ -55,6 +131,82 @@ ModelImporter:
     400044: Hero_OBJECT
     400046: LeftEye
     400048: RightEye
+    400050: AnsiktMain
+    400052: Armature
+    400054: BrynMain
+    400056: Brystkasse
+    400058: HalsHovud
+    400060: HovudBein
+    400062: LBiceps
+    400064: LFot
+    400066: LHalsbein
+    400068: LHandBein
+    400070: LIBryn
+    400072: LLaar
+    400074: LLangefinger1
+    400076: LLangefinger2
+    400078: LLangefinger3
+    400080: LLegg
+    400082: LLegJoint
+    400084: LLillefinger1
+    400086: LLillefinger2
+    400088: LLillefinger3
+    400090: LLippe
+    400092: LOBryn
+    400094: LOere
+    400096: LOereFeste
+    400098: LPeikefinger1
+    400100: LPeikefinger2
+    400102: LPeikefinger3
+    400104: LRingefinger1
+    400106: LRingefinger2
+    400108: LRingefinger3
+    400110: LTaa
+    400112: LTilLangefinger
+    400114: LTilLillefinger
+    400116: LTilPeikefinger
+    400118: LTilRingefinger
+    400120: LTilTommel
+    400122: LTommel1
+    400124: LTommel2
+    400126: LWanker
+    400128: MainBone
+    400130: Nase
+    400132: OLippe
+    400134: RBiceps
+    400136: RFot
+    400138: RHandBein
+    400140: RHelsbein
+    400142: RIBryn
+    400144: RLaar
+    400146: RLangefinger1
+    400148: RLangefinger2
+    400150: RLangefinger3
+    400152: RLegg
+    400154: RLegJoint
+    400156: RLillefinger1
+    400158: RLillefinger2
+    400160: RLillefinger3
+    400162: RLippe
+    400164: ROBryn
+    400166: ROere
+    400168: ROereFeste
+    400170: RPeikefinger1
+    400172: RPeikefinger2
+    400174: RPeikefinger3
+    400176: RRingefinger1
+    400178: RRingefinger2
+    400180: RRingefinger3
+    400182: RTaa
+    400184: RTilLangefinger
+    400186: RTilLillefinger
+    400188: RTilPeikefinger
+    400190: RTilRingefinger
+    400192: RTilTommel
+    400194: RTommel1
+    400196: RTommel2
+    400198: RWanker
+    400200: ULippe
     2300000: pCube12
     2300002: pSphere1
     2300004: pSphere2
@@ -73,8 +225,13 @@ ModelImporter:
     4300006: LeftEye
     4300008: RightEye
     4300010: Hero_OBJECT
-    7400000: Default Take
+    7400000: Idle
+    7400002: ArmatureAction
+    7400004: IdleForLong
     9500000: //RootNode
+    13700000: Hero_OBJECT
+    13700002: LeftEye
+    13700004: RightEye
   materials:
     importMaterials: 1
     materialName: 0
@@ -94,7 +251,407 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 158
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/LLegJoint
+        weight: 1
+      - path: Armature/LLegJoint/LLaar
+        weight: 1
+      - path: Armature/LLegJoint/LLaar/LLegg
+        weight: 1
+      - path: Armature/LLegJoint/LLaar/LLegg/LFot
+        weight: 1
+      - path: Armature/LLegJoint/LLaar/LLegg/LFot/LTaa
+        weight: 1
+      - path: Armature/MainBone
+        weight: 1
+      - path: Armature/MainBone/Brystkasse
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain/LLippe
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain/Nase
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain/OLippe
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain/RLippe
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain/ULippe
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/BrynMain
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/BrynMain/LIBryn
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/BrynMain/LOBryn
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/BrynMain/RIBryn
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/BrynMain/ROBryn
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/LOereFeste
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/LOereFeste/LOere
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/ROereFeste
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/ROereFeste/ROere
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLangefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLangefinger/LLangefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLangefinger/LLangefinger1/LLangefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLangefinger/LLangefinger1/LLangefinger2/LLangefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLillefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLillefinger/LLillefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLillefinger/LLillefinger1/LLillefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLillefinger/LLillefinger1/LLillefinger2/LLillefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilPeikefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilPeikefinger/LPeikefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilPeikefinger/LPeikefinger1/LPeikefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilPeikefinger/LPeikefinger1/LPeikefinger2/LPeikefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilRingefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilRingefinger/LRingefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilRingefinger/LRingefinger1/LRingefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilRingefinger/LRingefinger1/LRingefinger2/LRingefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilTommel
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilTommel/LTommel1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilTommel/LTommel1/LTommel2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLangefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLangefinger/RLangefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLangefinger/RLangefinger1/RLangefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLangefinger/RLangefinger1/RLangefinger2/RLangefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLillefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLillefinger/RLillefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLillefinger/RLillefinger1/RLillefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLillefinger/RLillefinger1/RLillefinger2/RLillefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilPeikefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilPeikefinger/RPeikefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilPeikefinger/RPeikefinger1/RPeikefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilPeikefinger/RPeikefinger1/RPeikefinger2/RPeikefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilRingefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilRingefinger/RRingefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilRingefinger/RRingefinger1/RRingefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilRingefinger/RRingefinger1/RRingefinger2/RRingefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilTommel
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilTommel/RTommel1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilTommel/RTommel1/RTommel2
+        weight: 1
+      - path: Armature/RLegJoint
+        weight: 1
+      - path: Armature/RLegJoint/RLaar
+        weight: 1
+      - path: Armature/RLegJoint/RLaar/RLegg
+        weight: 1
+      - path: Armature/RLegJoint/RLaar/RLegg/RFot
+        weight: 1
+      - path: Armature/RLegJoint/RLaar/RLegg/RFot/RTaa
+        weight: 1
+      - path: Hero_OBJECT
+        weight: 1
+      - path: LeftEye
+        weight: 1
+      - path: RightEye
+        weight: 1
+      - path: transform1
+        weight: 1
+      - path: transform2
+        weight: 1
+      - path: transform3
+        weight: 1
+      - path: transform5
+        weight: 1
+      - path: transform7
+        weight: 1
+      - path: transform9
+        weight: 1
+      - path: transform10
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: IdleForLong
+      takeName: Default Take
+      firstFrame: 161
+      lastFrame: 299
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/LLegJoint
+        weight: 1
+      - path: Armature/LLegJoint/LLaar
+        weight: 1
+      - path: Armature/LLegJoint/LLaar/LLegg
+        weight: 1
+      - path: Armature/LLegJoint/LLaar/LLegg/LFot
+        weight: 1
+      - path: Armature/LLegJoint/LLaar/LLegg/LFot/LTaa
+        weight: 1
+      - path: Armature/MainBone
+        weight: 1
+      - path: Armature/MainBone/Brystkasse
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain/LLippe
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain/Nase
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain/OLippe
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain/RLippe
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/AnsiktMain/ULippe
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/BrynMain
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/BrynMain/LIBryn
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/BrynMain/LOBryn
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/BrynMain/RIBryn
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/BrynMain/ROBryn
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/LOereFeste
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/LOereFeste/LOere
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/ROereFeste
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/HalsHovud/HovudBein/ROereFeste/ROere
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLangefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLangefinger/LLangefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLangefinger/LLangefinger1/LLangefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLangefinger/LLangefinger1/LLangefinger2/LLangefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLillefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLillefinger/LLillefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLillefinger/LLillefinger1/LLillefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilLillefinger/LLillefinger1/LLillefinger2/LLillefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilPeikefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilPeikefinger/LPeikefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilPeikefinger/LPeikefinger1/LPeikefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilPeikefinger/LPeikefinger1/LPeikefinger2/LPeikefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilRingefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilRingefinger/LRingefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilRingefinger/LRingefinger1/LRingefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilRingefinger/LRingefinger1/LRingefinger2/LRingefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilTommel
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilTommel/LTommel1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/LHalsbein/LBiceps/LWanker/LHandBein/LTilTommel/LTommel1/LTommel2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLangefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLangefinger/RLangefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLangefinger/RLangefinger1/RLangefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLangefinger/RLangefinger1/RLangefinger2/RLangefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLillefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLillefinger/RLillefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLillefinger/RLillefinger1/RLillefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilLillefinger/RLillefinger1/RLillefinger2/RLillefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilPeikefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilPeikefinger/RPeikefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilPeikefinger/RPeikefinger1/RPeikefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilPeikefinger/RPeikefinger1/RPeikefinger2/RPeikefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilRingefinger
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilRingefinger/RRingefinger1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilRingefinger/RRingefinger1/RRingefinger2
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilRingefinger/RRingefinger1/RRingefinger2/RRingefinger3
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilTommel
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilTommel/RTommel1
+        weight: 1
+      - path: Armature/MainBone/Brystkasse/RHelsbein/RBiceps/RWanker/RHandBein/RTilTommel/RTommel1/RTommel2
+        weight: 1
+      - path: Armature/RLegJoint
+        weight: 1
+      - path: Armature/RLegJoint/RLaar
+        weight: 1
+      - path: Armature/RLegJoint/RLaar/RLegg
+        weight: 1
+      - path: Armature/RLegJoint/RLaar/RLegg/RFot
+        weight: 1
+      - path: Armature/RLegJoint/RLaar/RLegg/RFot/RTaa
+        weight: 1
+      - path: Hero_OBJECT
+        weight: 1
+      - path: LeftEye
+        weight: 1
+      - path: RightEye
+        weight: 1
+      - path: transform1
+        weight: 1
+      - path: transform2
+        weight: 1
+      - path: transform3
+        weight: 1
+      - path: transform5
+        weight: 1
+      - path: transform7
+        weight: 1
+      - path: transform9
+        weight: 1
+      - path: transform10
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
