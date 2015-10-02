@@ -27,6 +27,9 @@ ModelImporter:
     100038: transform7
     100040: transform8
     100042: transform9
+    100044: Hero_OBJECT
+    100046: LeftEye
+    100048: RightEye
     400000: //RootNode
     400002: pCube1
     400004: pCube10
@@ -49,15 +52,27 @@ ModelImporter:
     400038: transform7
     400040: transform8
     400042: transform9
+    400044: Hero_OBJECT
+    400046: LeftEye
+    400048: RightEye
     2300000: pCube12
     2300002: pSphere1
     2300004: pSphere2
+    2300006: Hero_OBJECT
+    2300008: LeftEye
+    2300010: RightEye
     3300000: pCube12
     3300002: pSphere1
     3300004: pSphere2
+    3300006: Hero_OBJECT
+    3300008: LeftEye
+    3300010: RightEye
     4300000: pSphere2
     4300002: pSphere1
     4300004: pCube12
+    4300006: LeftEye
+    4300008: RightEye
+    4300010: Hero_OBJECT
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -99,7 +114,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 120
     splitTangentsAcrossUV: 1
     normalImportMode: 1
     tangentImportMode: 1
