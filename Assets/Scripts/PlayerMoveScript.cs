@@ -55,13 +55,16 @@ public class PlayerMoveScript : MonoBehaviour {
         {
             //Vector3 forward = kamera.GetForward();
             //transform.forward = (Vector3.Project(forward, Vector3.right) + Vector3.Project(forward, Vector3.forward));
-            if((body.velocity.x + body.velocity.z) != 0 && body.velocity != Vector3.zero)
+
+            Vector3 newDir = new Vector3(body.velocity.x, 0, body.velocity.z);
+            Vector3 lerpDir = Vector3.Lerp(character.transform.forward, newDir, 0.5f);
+            if ((body.velocity.x + body.velocity.z) != 0 && body.velocity != Vector3.zero && body.velocity.magnitude > 0.2f)
             {
-                character.SetForward(new Vector3(body.velocity.x, 0, body.velocity.z));
+                character.SetForward(lerpDir);
             }
         }
 		if (!canClimb) {
-			print (canJump);
+			//print (canJump);
 			DoJump (transform.up);
 		}
 	}

@@ -15,11 +15,13 @@ public class PlayerAnimationScript : MonoBehaviour {
     private Vector2 rightTargetOffset;
     private float lookSpeed;
     private Animator animator;
+    private PlayerMoveScript moveScript;
 
     // Use this for initialization
     void Start () {
         lookSpeed = 0.1f;
         animator = GetComponent<Animator>();
+        moveScript = GetComponent<PlayerMoveScript>();
 	}
 	
 	// Update is called once per frame
